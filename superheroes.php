@@ -1,5 +1,7 @@
 <?php
 
+require_once('index.html');
+
 $superheroes = [
   [
       "id" => 1,
