@@ -7,6 +7,7 @@
         <link rel="stylesheet" href="styles.css">
         <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
         <script src="app.js"></script>
+        <link rel="shortcut icon" href="">
         <title>INFO2180 Lab 4</title>
     </head>
     <body>
@@ -14,7 +15,16 @@
             <h1>Avengers Charachter Search</h1>
         </header>
         <main>
-            <button type="button" id="btn">Search</button>
+            <div id="searching">
+                <input type="text" id="search-box" placeholder="Superhero name or alias...">
+                <button type="button" id="btn">Search</button>
+            </div>
+            <div id="result">
+                <h3 id="alias"></h3>
+                <h4 id="r-name"></h4>
+                <p id="bio"></p>
+            </div>
+           
         </main>
     </body>
 </html>
