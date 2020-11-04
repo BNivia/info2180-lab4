@@ -63,17 +63,6 @@ $superheroes = [
   ], 
 ];
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST'){
-    if (isset($_POST['key']) && !empty($_POST['key'])){
-        $key = filter_input(INPUT_POST, 'key', FILTER_SANITIZE__SPECIAL_CHARS);
-
-        if (in_array($name, $superheroes)){
-            console.log(key);
-        }
-    }
-}
-
-
 ?>
 
 <ul>
