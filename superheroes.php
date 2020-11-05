@@ -62,12 +62,39 @@ $superheroes = [
       "biography" => "Notably powerful, Wanda Maximoff has fought both against and with the Avengers, attempting to hone her abilities and do what she believes is right to help the world.",
   ], 
 ];
-
 ?>
 
-<ul>
-<?php foreach ($superheroes as $superhero): ?>
-  <li><?= $superhero['alias']; ?></li>
-<?php endforeach; ?>
-</ul>
+<?php
+$q = filter_var($_REQUEST['q'], FILTER_SANITIZE_STRING);
+$hold = "";
+$data="";
 
+foreach ($superheroes as $hero){
+    if ($q == $hero['alias'] || $q == $hero['name']){
+        $hold = $hero;
+    }
+}?>
+
+<?php if($q != ""): ?>
+    <?php if($hold != ""): ?>
+        <h2>Results</h2>
+        <hr>
+        <?= "<h3> ${hold['alias']}</h3>" ?>
+        <?= "<h4>AKA ${hold['name']}</h4>"?>
+        <?= "<p> ${hold['biography']}</p>"?>
+    <?php endif; ?>
+    <?php if($hold == ""): ?>
+        <h2>Results</h2>
+        <hr>
+        <h3>Superhero not found.</h3>
+    <?php endif; ?>
+<?php if($q == ""): ?>
+    <h2>Results</h2>
+    <hr>
+    <ul>
+    <?php foreach ($superheroes as $superhero): ?>
+        <li><?= $superhero['alias']; ?></li>"
+    <?php endforeach; ?>
+    </ul>
+<?php endif; ?>
+<?php endif; ?>
