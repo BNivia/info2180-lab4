@@ -77,7 +77,7 @@ foreach ($superheroes as $hero){
 
 <?php if($q != ""): ?>
     <?php if($hold != ""): ?>
-        <h2>Results</h2>
+        <h2 class="result-title">Results</h2>
         <hr>
         <?= "<h3> ${hold['alias']}</h3>" ?>
         <?= "<h4>AKA ${hold['name']}</h4>"?>
@@ -86,15 +86,14 @@ foreach ($superheroes as $hero){
     <?php if($hold == ""): ?>
         <h2>Results</h2>
         <hr>
-        <h3>Superhero not found.</h3>
+        <h3 class="not-found">Superhero not found.</h3>
     <?php endif; ?>
-<?php if($q == ""): ?>
+    <?php else: ?>
     <h2>Results</h2>
     <hr>
     <ul>
     <?php foreach ($superheroes as $superhero): ?>
-        <li><?= $superhero['alias']; ?></li>"
+        <li><?= $superhero['alias']; ?></li>
     <?php endforeach; ?>
     </ul>
-<?php endif; ?>
 <?php endif; ?>
