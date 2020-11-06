@@ -88,7 +88,7 @@ foreach ($superheroes as $hero){
         <hr>
         <h3 class="not-found">Superhero not found.</h3>
     <?php endif; ?>
-    <?php else: ?>
+<?php else: ?>
     <h2>Results</h2>
     <hr>
     <ul>
