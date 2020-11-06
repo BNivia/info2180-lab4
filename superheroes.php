@@ -65,7 +65,7 @@ $superheroes = [
 ?>
 
 <?php
-$q = filter_var($_REQUEST['q'], FILTER_SANITIZE_STRING);
+$q = filter_var($_REQUEST['q'], FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES);
 $hold = "";
 $data="";
 
